@@ -1,0 +1,31 @@
+.page-container {
+  position: relative;
+  overflow-y: hidden;
+
+  transition-duration: .5s;
+  transition-property: height;
+}
+.height-max {
+  height: 100vh;
+}
+.height-1 {
+  height: 1px;
+}
+.height-0 {
+  height: 0;
+}
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+
+  transition-duration: .5s;
+  transition-property: top, bottom;
+}
+.page.hide-in-top {
+  top: -100vh;
+}
+.page.hide-in-bottom {
+  bottom: -100vh;
+}

@@ -1,0 +1,78 @@
+<div class="container text-white pt-2">
+  <div class="row m-0">
+    <h4 class="col p-0 m-0" style="flex-basis: 0;">{{place.name}}</h4>
+    <a mat-mini-fab class="col-auto" color="primary" (click)="close()">
+      <i class="material-icons text-white">close</i>
+    </a>
+  </div>
+  <hr class="white" />
+  <div class="row m-0">
+    <div class="w-100 mb-4 row mr-5">
+      <div class="d-inline-block col" style="max-width: 168px; cursor: pointer;">
+        <div style="font-size: 34px; line-height: 34px; height: 34px; color: white; letter-spacing: 2px; max-width: 168px;">★★★★★</div>
+        <div style="font-size: 36px; line-height: 36px; height: 34px; margin-top: -34px; color: #666; max-width: 168px;">★★★★★</div>
+        <div style="font-size: 34px; line-height: 34px; height: 34px; margin-top: -34px; letter-spacing: 2px; color: #ff0;
+                        overflow: hidden;" [style.width.px]="place.rating / 10 * 154">★★★★★</div>
+      </div>
+
+      <a class="col-auto" (click)="route()" data-toggle="modal" data-target="#routerModal" style="cursor: pointer;">
+        <i class="material-icons text-white">swap_calls</i>
+      </a>
+      <!--a href="" class="waves-effect waves-light modal-close right col-auto p-0 modal-trigger"
+         style="height: 44px; width: 44px; text-align: center; border-radius: 50%;">
+        <i class="material-icons text-white" style="height: 44px; line-height: 44px;">chat</i>
+      </a-->
+      <a class="waves-effect waves-light right col-auto p-0"
+         style="height: 44px; width: 44px; text-align: center; border-radius: 50%; cursor: pointer;">
+        <i class="material-icons text-white" style="height: 44px; line-height: 44px;">share</i>
+      </a>
+    </div>
+<!--    <mat-chip-list>-->
+<!--      <mat-chip *ngFor="let tag of place.tags" color="accent">{{tag}}</mat-chip>-->
+<!--    </mat-chip-list>-->
+  </div>
+  <hr class="white" />
+  <div class="container-fluid p-0">
+    <div class="row">
+      <div *ngFor="let image of place.photos" class="col-lg-3 col-md-4 col-sm-6 col-12 p-1">
+        <a data-fancybox="gallery" [href]="image" style="height: 200px; width: 100%;">
+          <div class="gallery-image" [style.backgroundImage]="'url(' + image + ')'"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p style="white-space: pre-wrap;">{{place.description}}</p>
+  <hr class="white" />
+  <div class="row m-0">
+    <a mat-button class="ml-auto" (click)="close()">Закрыть</a>
+  </div>
+</div>
+
+<div class="modal fade text-black black-text" id="routerModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="z-index: 99000; background: #666666;">
+      <div class="modal-header">
+        <h5 class="modal-title">Прокладка маршрута</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="inputRouterAddress">Адрес</label>
+          <input type="text" class="form-control" id="inputRouterAddress" (change)="searchAddress($event)">
+        </div>
+
+        <div class="alert alert-success fade" id="addressAlert">
+          {{addresLabel}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <div style="width: fit-content;" (click)="finishRoutes()">
+          <button type="button" class="btn btn-primary fade" data-dismiss="modal" id="closeModal">Проложить маршрут</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

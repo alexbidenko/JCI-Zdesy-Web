@@ -1,0 +1,31 @@
+<div class="container text-white pt-3">
+  <div class="row m-0">
+    <h4 class="col p-0 m-0" style="flex-basis: 0;">{{event.name}}</h4>
+    <a mat-mini-fab color="primary" class="right col-auto p-0"
+       style="height: 44px; width: 44px; text-align: center; border-radius: 50%;">
+      <i class="material-icons text-white" (click)="close()">close</i>
+    </a>
+  </div>
+  <hr class="white" />
+  <div class="row m-0">
+    <a [href]="'https://vk.com/' + event.screen_name" class="w-100 d-block">
+      <div class="w-100" [style.backgroundImage]="'url(' + event.photo_200 + ')'"
+           style="background: no-repeat center / cover; height: 400px;">
+      </div>
+    </a>
+  </div>
+  <hr class="white" />
+  <div class="row m-0">
+    <p class="lead mb-2 pt-2 mr-4" id="modal-event-time"></p>
+    <a *ngIf="!!event.site" [href]="event.site" mat-button class="mt-1 ml-auto">Перейти на сайт</a>
+  </div>
+  <hr class="white" />
+  <p style="white-space: pre-wrap;">{{event.description}}</p>
+  <div class="container-fluid p-0">
+  </div>
+  <hr class="white" />
+  <div class="row m-0">
+    <a [href]="'https://vk.com/' + event.screen_name" mat-button>Узнать больше</a>
+    <a mat-button (click)="close()">Закрыть</a>
+  </div>
+</div>

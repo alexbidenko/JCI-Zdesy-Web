@@ -1,0 +1,31 @@
+<header>
+  <mat-toolbar color="primary" class="position-fixed" style="z-index: 10; display: none;">
+    <div class="container">
+      <a mat-button routerLink="/map" class="text-white">
+        <mat-icon>map</mat-icon>
+        Карта
+      </a>
+    </div>
+  </mat-toolbar>
+
+  <div class="main-header-container">
+    <div class="main-header"></div>
+
+    <div class="main-header-back2"></div>
+    <div class="main-header-back"></div>
+
+    <h2 class="text-center main-title m-0 display-4 hide-header-elements fade show" id="ad-welcome-text">
+      Откройте просторы России
+    </h2>
+    <h1 class="text-center main-title m-0 display-2 hide-header-elements">Здеся</h1>
+
+    <div class="w-100 text-center" style="padding-top: 100px;">
+      <div class="d-inline-block mx-auto">
+<!--        <div id="header-arrow" class="hide-header-elements" (click)="scrollDawn()"></div>-->
+        <a mat-button class="display-2 main-title" routerLink="/map" style="font-size: 32px; color: white;">
+          Найти
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

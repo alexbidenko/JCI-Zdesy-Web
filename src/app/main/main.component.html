@@ -1,0 +1,12 @@
+<div class="page-container" [class.height-max]="deltaPage(1) == 0"
+     [class.height-1]="deltaPage(1) == 1" [class.height-0]="deltaPage(1) == 2">
+  <app-header class="page" [class.hide-in-top]="page > 1" [class.hide-in-bottom]="page < 1"></app-header>
+</div>
+<div class="page-container" [class.height-max]="deltaPage(2) == 0"
+     [class.height-1]="deltaPage(2) == 1" [class.height-0]="deltaPage(2) == 2">
+  <app-places class="page" [class.hide-in-top]="page > 2" [class.hide-in-bottom]="page < 2"></app-places>
+</div>
+<div class="page-container" [class.height-max]="deltaPage(3) == 0"
+     [class.height-1]="deltaPage(3) == 1" [class.height-0]="deltaPage(3) == 2">
+  <app-section1 class="page" [class.hide-in-top]="page > 3" [class.hide-in-bottom]="page < 3"></app-section1>
+</div>

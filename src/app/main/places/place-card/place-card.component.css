@@ -1,0 +1,27 @@
+mat-card {
+  height: 100%;
+  position: relative;
+  padding: 0 0 24px;
+  overflow: hidden;
+}
+mat-card-header {
+  height: 200px;
+  background: no-repeat center / cover;
+  position: relative;
+}
+mat-card-title {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+mat-card-content {
+  padding: 16px;
+  max-height: 200px;
+  overflow: hidden;
+}
+mat-card-actions {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}

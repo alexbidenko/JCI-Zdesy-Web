@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.bottom-sheet {
+  background: #333;
+  max-height: initial!important;
+}
+@media (min-width: 992px) {
+  .bottom-sheet {
+    max-width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  .bottom-sheet {
+    max-width: 720px;
+  }
+}
+@media (min-width: 576px) {
+  .bottom-sheet {
+    max-width: 540px;
+  }
+}
+.modal-backdrop {
+  z-index: 100;
+}
